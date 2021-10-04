@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Style */
+
+html, body {
+  background-color: #fffffd;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  position: relative;
+}
+
+.gameBoard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.controls {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.colors {
+  padding-right: 20px;
+  padding-bottom: 20px;
+  align-self: flex-end;
+}
+
+.color {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.color:before {
+  display: block;
+  content: " ";
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #bbbbbb;
+  box-shadow: -1px 4px 22px -4px rgba(143,142,142,0.75);
+}
+
+.color.yellow:before {
+  width: 100%;
+  height: 100%;
+  background-color: #ffd304;
+}
+
+.color.red:before {
+  width: 100%;
+  height: 100%;
+  background-color: #f33324;
+}
+
+.color.purple:before {
+  width: 100%;
+  height: 100%;
+  background-color: #254693;
+}
+
+.color.blue:before {
+  width: 100%;
+  height: 100%;
+  background-color: #0ea1d7;
+}
+
+.color.green:before {
+  width: 100%;
+  height: 100%;
+  background-color: #068b38;
+}
+
+.color.pink:before {
+  width: 100%;
+  height: 100%;
+  background-color: #e88196;
+}
+
+.color.brown:before {
+  width: 100%;
+  height: 100%;
+  background-color: #a65a36;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.pause {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #a29e93;
+}
+
+.play {
+  font-size: 3em;
+  color: #a29e93;
+}
+
+.active {
+  color: #3d3835;
+}
