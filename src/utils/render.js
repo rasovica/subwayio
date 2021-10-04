@@ -216,6 +216,12 @@ const renderPassengers = (ctx, station) => {
                 ctx.arc(centerX, centerY, 5, -11 * Math.PI / 6, -7 * Math.PI / 6);
                 ctx.fill();
                 break;
+            case 4:
+                ctx.moveTo(centerX - 5, centerY -2);
+                ctx.rect(centerX -5, centerY - 2, 10, 4);
+                ctx.rect(centerX - 2, centerY - 5, 4, 10);
+                ctx.fill();
+                break;
         }
     });
 };

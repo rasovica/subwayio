@@ -1,4 +1,5 @@
 import {useCallback, useEffect, useState} from "react";
+import {randomMinMax} from "../utils/random";
 
 
 export const useMetroStations = (time) => {
@@ -7,7 +8,7 @@ export const useMetroStations = (time) => {
             {
                 x: 200,
                 y: 200,
-                passengers: [0,1,2,3,4,5,6],
+                passengers: [0,1],
                 active: false,
                 type: 0,
                 index: 0,
@@ -52,7 +53,22 @@ export const useMetroStations = (time) => {
     }, [state]);
 
     useEffect(() => {
+        // New symbol every week
+        const currentLevel = Math.min(Math.floor(time / (360 * 7)), 4);
 
+        if (time % 30) {
+            setState(state => {
+               const clone = [...state];
+               const lineIndex = randomMinMax(0, clone.length || 0);
+               const stationIndex = randomMinMax(0, clone[lineIndex]?.length || 0);
+
+               if (clone?.[lineIndex]?.[stationIndex]?.passengers) {
+                   clone[lineIndex][stationIndex].passengers.push(randomMinMax(0, currentLevel));
+               }
+
+               return clone;
+            });
+        }
     }, [time]);
 
     return [state, updateStation, toggleStationActive];
